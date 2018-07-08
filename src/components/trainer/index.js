@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Tone from 'tone'
+var synth = new Tone.Synth().toMaster()
 
 const notes = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B']
 
@@ -100,6 +102,10 @@ export default class Trainer extends Component {
   render () {
     const { currentNoteIdx } = this.state
     const noteData = this.notePool[currentNoteIdx]
+
+    const noteVal = noteData.name + noteData.octave
+
+    synth.triggerAttackRelease(noteVal, '8n')
 
     return (
       <div>
