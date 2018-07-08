@@ -17,7 +17,7 @@ export default class App extends Component {
       <h1>Learn you a neck</h1>
       <h2>the shit {this.state.isRunning ? 'is' : 'is not'} running</h2>
       {this.state.isRunning
-        ? <Trainer stringNames={['E0']} startFret={0} endFret={5} />
+        ? <Trainer stringNames={['A0']} startFret={0} endFret={24} />
         : <Form />
       }
       <button onClick={this.toggleIsRunning}>
